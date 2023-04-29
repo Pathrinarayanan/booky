@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>book</title>
+
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app = "myApp" ng-controller = "thisapp">
+   
+<!-- header section starts  -->
+
+<section class="header">
+
+   <a href="home.html" class="logo">Booky Point</a>
+
+   <nav class="navbar">
+      <a href="home2.html">home</a>
+      <a href="about.html">about</a>
+      <a href="home1.html">logout</a>
+   </nav>
+
+   <div id="menu-btn" class="fas fa-bars"></div>
+
+</section>
+
+<!-- header section ends -->
+
+<div class="heading" style="background:url(images/header-bg-3.png) no-repeat">
+   <h1>buy now</h1>
+</div>
+
+<!-- booking section starts  -->
+
+<section class="booking">
+
+   <h1 class="heading-title">buy your fav!</h1>
+
+   <form method="post" class="book-form">
+
+      <div class="flex">
+         <div class="inputBox">
+            <span>Book name :</span>
+            <input type="text" placeholder="Enter book name" name="name">
+         </div>
+         <div class="inputBox">
+            <span>no of copies :</span>
+            <input ng-model = "num" type="number" id="quantity" name="quantity" min="1" max="100"> 
+         </div>
+         <div class="inputBox">
+            <span>Address :</span>
+            <input type="text" id="email" name="email" placeholder="Enter delivery address"> 
+         </div>
+         <div class="inputBox">
+            <span>payment method :</span>
+            <input type="radio" id="upi" name="fav_language" value="upi">
+            <label for="upi" style="font-size: 14pt;">UPI</label><br>
+            <input type="radio" id="netbank" name="fav_language" value="netbank">
+            <label for="netbank" style="font-size: 14pt;">net banking</label><br>
+            <input type="radio" id="cards" name="fav_language" value="cards">
+            <label for="cards" style="font-size: 14pt;">debit/credit cards</label>
+         </div>
+
+        <div class = "inputBox">
+            <span>Amount : </span><br>
+            <label style="font-size: 17pt;">{{result | currency : '₹'}}</label><br>
+         </div>
+         
+      </div>
+
+      <input ng-click = "total()" type="submit" value="buy" class="btn" name="send">
+
+      <script>
+         var mainApp = angular.module("myApp", []);
+         
+         mainApp.factory('MathService', function() {
+            var factory = {};
+            
+            factory.multiply = function(a) {
+               return a * 75
+            }
+            return factory;
+         });
+         mainApp.service('CalcService', function(MathService) {
+            this.total = function(a) {
+               return MathService.multiply(a);
+            }
+         });
+         mainApp.controller('thisapp', function($scope, CalcService) {
+            $scope.total = function() {
+               $scope.result = CalcService.total($scope.num);
+            }
+         });
+      </script>
+
+   </form>
+
+</section>
+
+
+<section class="footer">
+
+   <div class="box-container">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="home2.html">  home</a>
+         <a href="about.html">  about</a>
+         <!--<a href="package.html"> <i class="fas fa-angle-right"></i> package</a> -->
+         <a href="book.html">  buy</a>
+      </div>
+
+      <div class="box">
+         <h3>extra links</h3>
+         <a href="#">  ask questions</a>
+         <a href="#">  about us</a>
+         <a href="#">  privacy policy</a>
+         <a href="#">  terms of use</a>
+      </div>
+
+      <div class="box">
+         <h3>contact info</h3>
+         <a href="#">  +123-456-7890 </a>
+         <a href="#">  +111-222-3333 </a>
+         <a href="#">  sankarmr@gmail.com </a>
+         <a href="#">  chennai, india - 600100 </a>
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#">  facebook </a>
+         <a href="#">  twitter </a>
+         <a href="#">  instagram </a>
+         <a href="#">  linkedin </a>
+      </div>
+
+   </div>
+
+   <!--<div class="credit"> created by <span>mr.sankar</span> | all rights reserved! </div> -->
+
+</section>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>home</title>
+
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body ng-app="myApp" ng-controller="namesCtrl">
+<!-- header section starts  -->
+
+
+<section class="header">
+
+<a href="home.html" class="logo">{{text}} <br><b>booky point</b></a>
+
+   <nav class="navbar">
+      <a href="home2.html">home</a>
+      <a href="about.html">about</a>
+      
+      <a href="book.html">buy</a>
+      <a href="home1.html">logout</a>
+   </nav>
+
+   <div id="menu-btn" class="fas fa-bars"></div>
+
+</section>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home">
+
+   <div class="swiper home-slider">
+
+      <div class="swiper-wrapper">
+
+         <div class="swiper-slide slide" style="background:url(images/home-slide1.jpg) no-repeat">
+            <div class="content">
+               <span>explore, review, discover</span>
+               <h3>choose your next book</h3>
+               <a href="/product_view_cust" class="btn">discover more</a>
+            </div>
+         </div>
+
+         <div class="swiper-slide slide" style="background:url(images/home-slide2.jpg) no-repeat">
+            <div class="content">
+               <span>explore, discover, travel</span>
+               <h3>leave your own review</h3>
+               <a href="" class="btn">discover more</a>
+            </div>
+         </div>
+
+         <div class="swiper-slide slide" style="background:url(images/home-slide3.jpg) no-repeat">
+            <div class="content">
+               <span>explore, discover, travel</span>
+               <h3>suggest books to friends</h3>
+               <a href="" class="btn">discover more</a>
+            </div>
+         </div>
+         
+      </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+   </div>
+
+</section>
+
+<section class="home-packages">
+
+   <h1 class="heading-title"> recent hits </h1>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="image">
+            <img src="images/Violet-Made-of-Thorns_cover.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Violet Made of Thorns</h3>
+            <p>Fairytale lovers rejoice! Violet Made of Thorns is the dark, steamy fairytale</p>
+            <a href="book.html" class="btn">buy {{75 | currency : '₹'}}</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="images/light-lark.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Light Lark</h3>
+            <p>Fans of The Hunger Games will love this fantasy full of romantic complications</p>
+            <a href="book.html" class="btn">buy {{100 | currency : '₹'}}</a>
+         </div>
+      </div>
+      
+      <div class="box">
+         <div class="image">
+            <img src="images/it-ends-with-it-book.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>It Ends With Us</h3>
+            <p>It Ends With Us is the book that everyone can’t stop talking about</p>
+            <a href="book.html" class="btn">buy {{80 | currency : '₹'}}</a>
+         </div>
+      </div>
+
+   </div>
+
+   <div class="load-more"> <a href= "/product_view_cust" class="btn">load more</a> </div>
+
+</section>
+
+<!-- home packages section ends -->
+
+<!-- home about section starts  -->
+
+<section class="home-about">
+
+   <div class="image">
+      <img src="images/about_img.jpg" alt="">
+   </div>
+
+   <div class="content">
+      <h3>about us</h3>
+      <p>Our platform gives independent bookstores tools to compete online and financial support to help them maintain their presence in local communities</p>
+      <a href="about.html" class="btn">read more</a>
+   </div>
+
+</section>
+<section>
+
+   <div>
+      <style>
+         body {
+           font-family: Arial;
+         }
+         
+         * {
+           box-sizing: border-box;
+         }
+         
+         form.example input[type=text] {
+           padding: 10px;
+           font-size: 17px;
+           border: 1px solid grey;
+           float: left;
+           width: 80%;
+           background: #f1f1f1;
+         }
+         
+         form.example button {
+           float: left;
+           width: 20%;
+           padding: 10px;
+           background: #2196F3;
+           color: white;
+           font-size: 17px;
+           border: 1px solid grey;
+           border-left: none;
+           cursor: pointer;
+         }
+         
+         form.example button:hover {
+           background: #0b7dda;
+         }
+         
+         form.example::after {
+           content: "";
+           clear: both;
+           display: table;
+         }
+         .center {
+           margin-left: auto;
+           margin-right: auto;
+         }
+         tr:hover {background-color: coral;}
+         </style>
+         </head>
+         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+         
+         <body >
+         
+         
+         <form class="example"  style="margin:auto;max-width:700px">
+           <input type="text" ng-model="test" placeholder="Search.." name="search2">
+           <button type="submit"><i class="fa fa-search"></i></button>
+         </form>
+         <table class="table table-striped"   border="1" width="90%" border-collapse: collapse;>
+           <tr>
+           <th ng-click="orderByMe('name')"><h1>NAME</h1></th>
+           <th ng-click="orderByMe('author')"><h1>AUTHOR</h1></th>
+           <th ng-click="orderByMe('price')"><h1>PRICE</h1></th>
+           </tr>
+           <tr ng-repeat="x in names | filter:test">
+           <td><h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{x.name}}</h1></td>
+           <td><h1>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;{{x.author}}</h1></td>
+           <td><h1>&emsp;&emsp;&emsp;&emsp;{{x.price}}</h1></td>
+           </tr>
+           </table>
+         
+         <script>
+         angular.module('myApp', []).controller('namesCtrl', function($scope, $timeout) {
+            $scope.text = 'Logged in successfully';
+            $timeout(function() {
+                $scope.text = 'Welcome... !';
+            }, 3000);
+             $scope.names =[
+                 {name:'The Hobbit',author:'J.R.R. Tolkien',price:'$100'},
+                 {name:'Catch-22',author:'Joseph Heller',price:'$110'},
+                 {name:'The Lord Of Rings',author:'J.R.R. Tolkien ',price:'$90'},
+                 {name:'Crime And Punishment',author:'Fyodor Dostoevsky ',price:'$60'},
+                 {name:'Dune',author:'Frank Herbert ',price:'$55'},
+                 {name:'Little Women',author:'Louisa May Alcott ',price:'$150'},
+                 {name:'City Of Thieves',author:'David Benioff',price:'$200'},
+                 {name:'The Alchemist',author:'Paulo Coelho ',price:'$75'},
+                 {name:'The Martain',author:'Andy Weir',price:'$63'}
+                 ];
+         });
+         </script>
+
+   </div>
+
+
+</section>
+
+
+<section class="footer">
+
+   <div class="box-container">
+
+      <div class="box">
+         <h3>quick links</h3>
+         <a href="home2.html">  home</a>
+         <a href="about.html">  about</a>
+         <!--<a href="package.html"> <i class="fas fa-angle-right"></i> package</a> -->
+         <a href="book.html">  buy</a>
+      </div>
+
+      <div class="box">
+         <h3>extra links</h3>
+         <a href="#">  ask questions</a>
+         <a href="#">  about us</a>
+         <a href="#">  privacy policy</a>
+         <a href="#">  terms of use</a>
+      </div>
+
+      <div class="box">
+         <h3>contact info</h3>
+         <a href="#">  +123-456-7890 </a>
+         <a href="#">  +111-222-3333 </a>
+         <a href="#">  sankarmr@gmail.com </a>
+         <a href="#">  chennai, india - 600100 </a>
+      </div>
+
+      <div class="box">
+         <h3>follow us</h3>
+         <a href="#">  facebook </a>
+         <a href="#">  twitter </a>
+         <a href="#">  instagram </a>
+         <a href="#">  linkedin </a>
+      </div>
+
+   </div>
+
+   <!--<div class="credit"> created by <span>mr.sankar</span> | all rights reserved! </div> -->
+
+</section>
+
+<!-- footer section ends -->
+
+
+<!-- swiper js link  -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
