@@ -2,6 +2,7 @@
 var express = require('express');
 const Cloudant = require('@cloudant/cloudant');
 const mysql = require('mysql');
+const fs  = require('fs');
 const path = require('path');
 session = require('express-session')
 var app = express();
