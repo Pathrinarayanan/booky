@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //set folder public as static folder for static file
 
 app.use('/assets',express.static(__dirname + '/public'));
+app.use('/', express.static(path.join(__dirname)))
 
 var connection = mysql.createConnection({
   host: "localhost",
