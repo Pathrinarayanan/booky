@@ -37,12 +37,24 @@ app.use(session({
 
 app.use(express.static("/app/static-files"));
 
+const staticDirlogin = path.join(__dirname, 'login.html');
+app.get('/', (req, res) => {
+  try {
+    // Read the HTML file asynchronously and send it as a response
+    fs.readFile(staticDirlogin, 'utf-8', (err, data) => {
+      if (err) {
+        console.error('Error reading file:', err);
+        res.status(500).send('Internal Server Error');
+      } else {
+        res.send(data);
+      }
+    });
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).send('Internal Server Error');
+  }
+});
 
-app.get('/', function (req, res) 
-{
-  //res.sendFile(__dirname + '/login.html')
-  res.redirect('/login.html')
-})
 
 app.get('/product_view', function (req, res) {
   // Retrieve all documents from the database
